@@ -13,6 +13,7 @@ class Entidade{
         Arma *arma = nullptr;
 
     public:
+        friend class Status;
         Entidade(string n, int v, int atq, int def) : nome{n}, ataqueBase{atq}, defesaBase{def}, vidaBase{v}{srand(time(NULL));}
         ~Entidade(){delete arma;};
         string get_nome()const{return nome;}
@@ -22,8 +23,6 @@ class Entidade{
         virtual int ataque()const = 0;
         virtual int Dano_ataque(Entidade&)const = 0;
         virtual void equipar_arma(Arma*){}
-        
-        friend class Status;
 };
 
 
