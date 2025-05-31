@@ -9,17 +9,18 @@ using namespace std;
 class Entidade{
     protected:
         string nome;
-        int ataqueBase, defesaBase, vidaBase;
-        int ataque(){return ataqueBase*(rand()%12);};
+        int ataqueBase, defesaBase, vidaBase;       
         Arma *arma = nullptr;
 
     public:
         Entidade(string n, int v, int atq, int def) : nome{n}, ataqueBase{atq}, defesaBase{def}, vidaBase{v}{srand(time(NULL));}
-        ~Entidade();
+        ~Entidade(){delete arma;};
         string get_nome(){return nome;}
-  
-        int Dano_ataque(Entidade&);
-        virtual void equipar_arma(Arma&)const = 0;
+        int get_vidaBase(){return vidaBase;}
+        int get_defesaBase(){return defesaBase;}
+        virtual int ataque()const = 0;
+        virtual int Dano_ataque(Entidade&)const = 0;
+        virtual void equipar_arma(Arma*){}
 };
 
 

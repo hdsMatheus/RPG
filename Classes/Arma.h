@@ -1,16 +1,16 @@
-#ifndef ARMA
+#ifndef ARMA_H
 #define ARMA_H
 #include <string>
 #include "Item.h"
 
 class Arma : public Item{
     protected:
-        string Arma_nome;
         int Arma_dano;
     public:
-        Arma(string n, int d) : Arma_nome{n}, Arma_dano{d}{}
+        Arma(string n, int d, int prc) : Item{n, prc}, Arma_dano{d}{}
         virtual int get_dano()const = 0;
         virtual int get_preco()const = 0;
+        string get_nome_arma()const{return get_item_nome();}
 };
 
 #endif          

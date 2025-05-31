@@ -4,9 +4,10 @@
 
 class Graveto_do_aprendiz : public Arma{
     public:
-        Graveto_do_aprendiz() : Arma{"Graveto do Aprendiz", 5}{} //dano a ser estudado
+        Graveto_do_aprendiz() : Arma{"Graveto do Aprendiz", 5, 3}{} //dano a ser estudado (5 de dano e 3 dinheiros)
         int get_dano( )const {return Arma_dano;};
         int get_preco() const {return item_preco;};
+        string get_arma_nome()const{return get_item_nome();}
 };
 
 #endif
