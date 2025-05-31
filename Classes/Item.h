@@ -8,7 +8,7 @@ class Item{
         int item_preco;
     public:
         Item(string n, int p) : item_nome{n}, item_preco{p}{}
-        Item(){}
+        ~Item(){}
         virtual int get_preco() const = 0;
         virtual string get_item_nome()const{return item_nome;}
 };

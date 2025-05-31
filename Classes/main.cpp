@@ -7,5 +7,5 @@ int main(){
     cout << "dano = " << p1.ataque() << endl << p1.get_armaEquipada_nome() << endl;
     Mago p2("F");
 
-    cout << p2.Dano_ataque(p1);
+    cout << p1.Dano_ataque(p2);
 }

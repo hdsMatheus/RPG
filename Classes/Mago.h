@@ -18,5 +18,4 @@ class Mago : public Entidade{
         int Dano_ataque(Entidade&)const;
 };
 
-
 #endif
