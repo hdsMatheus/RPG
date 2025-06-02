@@ -1,15 +1,16 @@
-#include "Graveto_do_aprendiz.h"
-#include "Mago.h"
-#include "status.h"
 #include <iostream>
+#include "Guerreiro.h"
+#include "Espada_enferrujada.h"
 using namespace std;
-int main(){
-    Status s;
-    Mago p1("Nicolas");
-    cout << "dano = " << p1.ataque() << endl << p1.get_armaEquipada_nome() << endl;
-    Mago p2("F");
-    cout << "Vida inicial " << p1.get_vidaBase() << endl;
-    s.buffVida(p1, 10);
-    cout << "Vida depois " << p1.get_vidaBase() << endl;
-    cout << p1.Dano_ataque(p2);
+
+int main() {
+    Guerreiro g1("Jonas");
+    Guerreiro g2("Emannuel");
+
+    cout << "Guerreiro 1: " << g1.get_nome() << " com arma " << g1.get_armaEquipada_nome() << endl;
+    cout << "Ataque base: " << g1.ataque() << endl;
+
+    cout << "Dano causado ao Guerreiro 2: " << g1.Dano_ataque(g2) << endl;
+
+    return 0;
 }
