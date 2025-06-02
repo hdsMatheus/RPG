@@ -6,7 +6,8 @@ Guerreiro::Guerreiro(string n) : Entidade{n, 120, 16, 55} { //120 de vida, 16 de
 }
 
 int Guerreiro::ataque() const {
-    return ataqueBase * ((2 + rand() % 11) / 10); // 20% a 110%
+    double fator = (2 + rand() % 11) / 10.0;
+    return ataqueBase * fator;
 }
 
 int Guerreiro::Dano_ataque(Entidade& vitima) const {
