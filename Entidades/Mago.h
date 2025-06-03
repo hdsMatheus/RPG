@@ -3,7 +3,7 @@
 #include "../Armas/Arma.h"
 #include "Entidade.h"
 #include "../Armas/Graveto_do_aprendiz.h"
-
+//funcoes comentadas na superclasse Entidade.h
 using namespace std;
 
 class Mago : public Entidade{

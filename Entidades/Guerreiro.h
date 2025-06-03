@@ -3,6 +3,7 @@
 #include "Entidade.h"
 #include "../Armas/Arma.h"
 #include "../Armas/Espada_enferrujada.h"
+//funcoes comentadas na superclasse Entidade.h
 class Guerreiro : public Entidade{
         Guerreiro(string);
         string get_nome()const{return nome;}
