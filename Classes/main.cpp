@@ -1,4 +1,4 @@
-/*
+
 #include <iostream>
 #include "Guerreiro.h"
 #include "Espada_enferrujada.h"
@@ -15,8 +15,8 @@ int main() {
 
     return 0;
 }
-*/
 
+/*
 #include <iostream>
 #include "Inimigo.h"
 #include "Mago.h"
@@ -38,3 +38,4 @@ int main() {
 
     return 0;
 }
+*/
