@@ -1,8 +1,8 @@
 #ifndef MAGO_H
 #define MAGO_H
-#include "Arma.h"
+#include "../Armas/Arma.h"
 #include "Entidade.h"
-#include "Graveto_do_aprendiz.h"
+#include "../Armas/Graveto_do_aprendiz.h"
 
 using namespace std;
 
@@ -16,6 +16,13 @@ class Mago : public Entidade{
         void equipar_arma(Arma* eqp)override{arma = eqp;}
         int ataque()const;
         int Dano_ataque(Entidade&)const;
+
+        void buffVida(int vida)override{ vidaBase += vida;};
+        void debuffVida(int vida) override{ vidaBase -= vida;};
+        void buffDano(int dano) override{ ataqueBase += dano;};
+        void debuffDano(int dano) override{ ataqueBase -= dano;};
+        void buffDefesa(int def) override{ defesaBase += def;};
+        void debuffDefesa(int def) override{ defesaBase -=def;};
 };
 
 #endif

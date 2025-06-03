@@ -2,8 +2,7 @@
 #define ENTIDADE_H
 #include <string>
 #include <ctime>
-#include "Arma.h"
-#include "status.h"
+#include "../Armas/Arma.h"
 using namespace std;
 
 class Entidade{
@@ -23,6 +22,13 @@ class Entidade{
         virtual int ataque()const = 0;
         virtual int Dano_ataque(Entidade&)const = 0;
         virtual void equipar_arma(Arma*){}
+
+        virtual void buffVida(int vida) = 0;
+        virtual void debuffVida(int vida) = 0;
+        virtual void buffDano(int dano) = 0;
+        virtual void debuffDano(int dano) = 0;
+        virtual void buffDefesa(int def) = 0;
+        virtual void debuffDefesa(int def) = 0;
 };
 
 

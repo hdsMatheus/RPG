@@ -1,10 +1,11 @@
 #ifndef GRAVETO_DO_APRENDIZ_H
 #define GRAVETO_DO_APRENDIZ_H
 #include "Arma.h"
+#include "../Entidades/Mago.h"
 
 class Graveto_do_aprendiz : public Arma{
     public:
-        Graveto_do_aprendiz() : Arma{"Graveto do Aprendiz", 5, 3}{} //dano a ser estudado (5 de dano e 3 dinheiros)
+        Graveto_do_aprendiz() : Arma{"Graveto do Aprendiz", 5, 3}{tipoEntidade = new Mago("");} //dano a ser estudado (5 de dano e 3 dinheiros)
         int get_dano( )const {return Arma_dano;};
         int get_preco() const {return item_preco;};
         string get_arma_nome()const{return get_item_nome();}

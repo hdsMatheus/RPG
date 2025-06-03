@@ -9,7 +9,6 @@ int main(){
     cout << "dano = " << p1.ataque() << endl << p1.get_armaEquipada_nome() << endl;
     Mago p2("F");
     cout << "Vida inicial " << p1.get_vidaBase() << endl;
-    s.buffVida(p1, 10);
     cout << "Vida depois " << p1.get_vidaBase() << endl;
     cout << p1.Dano_ataque(p2);
 }
