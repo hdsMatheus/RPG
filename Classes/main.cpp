@@ -5,6 +5,7 @@
 #include "../Outros/Inventario.h"
 #include "../Entidades/Jogador.h"
 #include "../Armas/Arma.h"
+#include "../Entidades/Guerreiro.h"
 
 using namespace std;
 int main(){
@@ -12,7 +13,8 @@ int main(){
     string nome;
     cin >> nome;
     Entidade *m = new Mago();
-    Jogador p1{nome, m};
+    Entidade *g = new Guerreiro();
+    Jogador p1{nome, g};
     cout << "\nNome: " << p1.get_jogador_nome() << endl << "Classe: " << p1.get_jogador_classe_nome() << endl;
     Graveto_do_aprendiz item1;
     Espada_enferrujada item2;
