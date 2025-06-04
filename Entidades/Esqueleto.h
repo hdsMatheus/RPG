@@ -1,19 +1,18 @@
-#ifndef MAGO_H
-#define MAGO_H
-#include "../Armas/Arma.h"
+#ifndef ESQUELETO_H
+#define ESQUELETO_H
+#include "Inimigo.h"
 #include "Entidade.h"
-#include "../Armas/Graveto_do_aprendiz.h"
-//funcoes comentadas na superclasse Entidade.h
+
 using namespace std;
 
-class Mago : public Entidade{
+class Esqueleto : public Entidade{
     public:
-        Mago();
+        Esqueleto();
+
         string get_entidade_nome()const{ return Entidade_nome; }
         int get_vidaBase()const{return vidaBase;}
         int get_defesaBase()const{return defesaBase;}
         string get_armaEquipada_nome()const{return arma->get_nome_arma();}
-        void equipar_arma(Arma* eqp)override{arma = eqp;}
         int ataque()const;
         int Dano_ataque(Entidade&)const;
 

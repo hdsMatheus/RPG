@@ -7,15 +7,15 @@ using namespace std;
 
 class Entidade{
     protected:
-        string nome;
+        string Entidade_nome;
         int ataqueBase, defesaBase, vidaBase;       
         Arma *arma = nullptr;
 
     public:
-        friend class Status;
-        Entidade(string n, int v, int atq, int def) : nome{n}, ataqueBase{atq}, defesaBase{def}, vidaBase{v}{srand(time(NULL));}
+        Entidade(int v, int atq, int def) : ataqueBase{atq}, defesaBase{def}, vidaBase{v}{srand(time(NULL));}
         ~Entidade(){delete arma;};
-        string get_nome()const{return nome;}
+
+        string get_entidade_nome()const{ return Entidade_nome; }
         int get_vidaBase()const{return vidaBase;}
         int get_defesaBase()const{return defesaBase;}
         string get_armaEquipada_nome()const{return arma->get_nome_arma();}

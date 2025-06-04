@@ -3,7 +3,8 @@
 
 using namespace std;
 
-Mago::Mago(string n): Entidade{n, 100, 4, 50}{
+Mago::Mago(): Entidade{100, 4, 50}{
+    Entidade_nome = "Mago";
     arma = new Graveto_do_aprendiz();
 }
 

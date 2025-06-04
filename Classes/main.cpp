@@ -1,14 +1,26 @@
-#include "Graveto_do_aprendiz.h"
-#include "Mago.h"
-#include "status.h"
+#include "../Armas/Graveto_do_aprendiz.h"
+#include "../Entidades/Mago.h"
+#include "../Armas/Espada_enferrujada.h"
 #include <iostream>
+#include "../Outros/Inventario.h"
+#include "../Entidades/Jogador.h"
+#include "../Armas/Arma.h"
+
 using namespace std;
 int main(){
-    Status s;
-    Mago p1("Nicolas");
-    cout << "dano = " << p1.ataque() << endl << p1.get_armaEquipada_nome() << endl;
-    Mago p2("F");
-    cout << "Vida inicial " << p1.get_vidaBase() << endl;
-    cout << "Vida depois " << p1.get_vidaBase() << endl;
-    cout << p1.Dano_ataque(p2);
+    cout << "Insira seu nome: ";
+    string nome;
+    cin >> nome;
+    Entidade *m = new Mago();
+    Jogador p1{nome, m};
+    cout << "\nNome: " << p1.get_jogador_nome() << endl << "Classe: " << p1.get_jogador_classe_nome() << endl;
+    Graveto_do_aprendiz item1;
+    Espada_enferrujada item2;
+
+    if(p1.mochila_vazia()) cout << "MOCHILA VAZIA\n"; 
+    p1.mochila_inserir(item1);
+    p1.mochila_inserir(item2);
+    p1.mochila_mostrar();
+    p1.mochila_remover(item1);
+    p1.mochila_mostrar();
 }
