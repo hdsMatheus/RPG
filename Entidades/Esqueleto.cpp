@@ -12,7 +12,7 @@ int Esqueleto::ataque()const{
 int Esqueleto::Dano_ataque(Entidade& vitima)const{
     try{
     int dano = ataque()+arma->get_dano() - vitima.get_defesaBase();
-    if(dano < 0) throw out_of_range("");
+    if(dano < 0) throw out_of_range("ATAQUE BLOQUEADO\n");//pontos de defesa sao maiores que o dano sofrido
     return dano;
     }
     catch(out_of_range &exce){
