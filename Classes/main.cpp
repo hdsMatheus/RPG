@@ -14,7 +14,7 @@ int main(){
     cin >> nome;
     Entidade *m = new Mago();
     Entidade *g = new Guerreiro();
-    Jogador p1{nome, g};
+    Jogador p1{nome, m};
     cout << "\nNome: " << p1.get_jogador_nome() << endl << "Classe: " << p1.get_jogador_classe_nome() << endl;
     Graveto_do_aprendiz item1;
     Espada_enferrujada item2;
@@ -25,4 +25,5 @@ int main(){
     p1.mochila_mostrar();
     p1.mochila_remover(item1);
     p1.mochila_mostrar();
+    cout << "DANO: " << p1.get_jogador_classe()->ataque();//da pra atacar usando a funcao get_jogador_classe
 }
