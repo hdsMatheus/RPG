@@ -22,3 +22,13 @@ int Mago::Dano_ataque(Entidade& vitima)const{
         return 0;
     }
 }
+
+void Mago::receber_dano(int dano){
+    try{
+        if(dano >= vidaBase) throw out_of_range("");
+        vidaBase -= dano;
+    }
+    catch(out_of_range &exce){
+        vidaBase = 0;
+    }
+}

@@ -17,10 +17,12 @@ class Entidade{
 
         string get_entidade_nome()const{ return Entidade_nome; }
         int get_vidaBase()const{return vidaBase;}
+        int get_ataqueBase()const{return ataqueBase;}
         int get_defesaBase()const{return defesaBase;}
         string get_armaEquipada_nome()const{return arma->get_nome_arma();}
         virtual int ataque()const = 0; //calcula o ataque base, utilizando o parametro ataqueBase e porcentagens desse dano
         virtual int Dano_ataque(Entidade&)const = 0; //calcula o dano no adversario com base na funcao ataque, arma, defesaBase do oponente e armadura (parametro a ser add)
+        virtual void receber_dano(int) = 0;
         virtual void equipar_arma(Arma*){}
         //funcoes de buff
         virtual void buffVida(int vida) = 0;

@@ -18,6 +18,7 @@ class Dungeon{
         virtual void dungeon_finalizar()const = 0;
         virtual Entidade* dungeon_get_inimigo()const = 0;
         virtual int dungeon_get_idas()const = 0;
+        virtual Inimigo* get_adversario()const = 0;
 };
 
 #endif

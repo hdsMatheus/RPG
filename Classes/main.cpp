@@ -6,6 +6,8 @@
 #include "../Entidades/Jogador.h"
 #include "../Armas/Arma.h"
 #include "../Entidades/Guerreiro.h"
+#include "../funcoes.h"
+#include "../Entidades/Esqueleto.h"
 
 using namespace std;
 int main(){

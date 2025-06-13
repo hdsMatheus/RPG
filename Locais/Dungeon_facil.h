@@ -10,5 +10,6 @@ class DungeonFacil : public Dungeon{
         void dungeon_finalizar(){ idas--; multiplicador/=2;};
         Entidade* dungeon_get_inimigo(){ return adversario;};
         int dungeon_get_idas(){ return idas; }
+        Inimigo* get_adversario(){return adversario;};
 };
 #endif
