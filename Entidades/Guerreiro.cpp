@@ -6,6 +6,7 @@ using namespace std;
 Guerreiro::Guerreiro(): Entidade{120, 16, 55}{ //120 de vida, 16 de atq e 55 de def
     Entidade_nome = "Guerreiro";
     arma = new Espada_enferrujada();
+    entidade_tipo = GUERREIRO;
 }
 
 int Guerreiro::ataque()const{

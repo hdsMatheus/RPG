@@ -8,17 +8,19 @@ using namespace std;
 class Entidade{
     protected:
         string Entidade_nome;
-        int ataqueBase, defesaBase, vidaBase;       
+        int ataqueBase, defesaBase, vidaBase, vidaMaxima;       
         Arma *arma = nullptr;
+        EntidadePermitida entidade_tipo;
 
     public:
-        Entidade(int v, int atq, int def) : ataqueBase{atq}, defesaBase{def}, vidaBase{v}{srand(time(NULL));}
+        Entidade(int v, int atq, int def) : ataqueBase{atq}, defesaBase{def}, vidaBase{v}, vidaMaxima{v}{srand(time(NULL));} //cria a entidade setando a vida atual pra a vida maxima
         ~Entidade(){delete arma;};
 
         string get_entidade_nome()const{ return Entidade_nome; }
         int get_vidaBase()const{return vidaBase;}
         int get_ataqueBase()const{return ataqueBase;}
         int get_defesaBase()const{return defesaBase;}
+        int get_vidaMaxima()const{return vidaMaxima;}
         string get_armaEquipada_nome()const{return arma->get_nome_arma();}
         virtual int ataque()const = 0; //calcula o ataque base, utilizando o parametro ataqueBase e porcentagens desse dano
         virtual int Dano_ataque(Entidade&)const = 0; //calcula o dano no adversario com base na funcao ataque, arma, defesaBase do oponente e armadura (parametro a ser add)

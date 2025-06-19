@@ -11,6 +11,7 @@ class Guerreiro : public Entidade{
         int get_vidaBase()const{return vidaBase;}
         int get_defesaBase()const{return defesaBase;}
         int get_ataqueBase()const{return ataqueBase;}
+        int get_vidaMaxima()const{return vidaMaxima;}
         string get_armaEquipada_nome()const{return arma->get_nome_arma();}
         void equipar_arma(Arma* eqp)override{arma = eqp;}
         int ataque()const;

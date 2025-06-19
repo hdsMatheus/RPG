@@ -6,6 +6,7 @@ using namespace std;
 Mago::Mago(): Entidade{100, 4, 50}{
     Entidade_nome = "Mago";
     arma = new Graveto_do_aprendiz();
+    entidade_tipo = MAGO;
 }
 
 int Mago::ataque()const{

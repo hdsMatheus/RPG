@@ -22,7 +22,6 @@ void mostrar_status_batalha(Jogador& player, Entidade& inimigo){ //recebe um jog
     cout <<"ATAQUE: " << player.get_jogador_classe()->get_ataqueBase() << "\t\t\tATAQUE: " << inimigo.get_ataqueBase() << endl;
 }
 
-
 void batalha(Jogador& player, Dungeon& dungeon){ 
     bool p_turno = true, d_turno = false; // o jogador começa jogando 
     int turno = 1;
@@ -44,4 +43,42 @@ void batalha(Jogador& player, Dungeon& dungeon){
     }
 }
 
+void inicio(){
+    cout << "";
+}
+
+void cidade(Jogador& player){
+    cout << "Voce esta na cidade, aqui voce pode se recuperar de suas batalhas ou visitar nossos mercados, talvez encontre algo que te ajude nas suas proximas batalhas." << endl;; //mensagem explicando oq pode fazer na cidade
+    cout << "Onde voce deseja ir?" << endl << "1 - Mercado" << endl << "2 - Estalagem" << endl << "3 - Continuar" << endl;
+    int escolha;
+    bool flag = true;
+    do{
+        cin >> escolha;
+        switch(escolha){
+            case 1: //mercado 
+                break;
+            case 2: //curar a vida
+                if(player.get_jogador_dinheiro() < 10){//valor do custo da acao (a mudar)
+                    cout << "Voce nao tem dinhiro suficiente" << endl;
+                    flag = true;
+                    break;    
+                }else{
+                    int valor = player.get_jogador_dinheiro();
+                    player.set_jogador_dinheiro(valor - 10); //valor do custo da acao (a mudar)
+                    player.get_jogador_classe()->buffVida(player.get_jogador_classe()->get_vidaMaxima() - player.get_jogador_classe()->get_vidaBase()); //cura a vida do jogador para a vida maxima da classe (faz uma subtração entre a vida maxima da classe e vida atual)
+                    flag = true;
+                    break;
+                }
+            case 3:
+                cout << "Continuando sua jornada..." << endl;
+                system("pause");
+                system("cls");
+                flag = false;
+                break;
+            default:
+                cout << "Escolha uma opcao valilda" << endl;
+                flag = true;
+        }
+    }while(flag);
+}
 #endif
