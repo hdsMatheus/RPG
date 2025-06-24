@@ -2,8 +2,7 @@
 #define ASSALTO_H
 
 #include "Evento_aleatorio.h"
-#include <string> 
-#include <random>
+#include <string>
 
 using namespace std;
 
